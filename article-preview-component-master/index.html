@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Manrope;
+  background-color:  hsl(210, 46%, 95%);
+  overflow: hidden;
+}
+.card{
+  display:flex;
+  width:750px;
+  border-radius: 0 8px 8px 0;
+}
+.image{
+  width:40%;
+}
+.image img{
+  width:100%; height:100%;
+  border-radius: 8px 0 0 8px;
+}
+.content{
+  width:60%;
+    background-color: white;border-radius: 0 8px 8px 0;
+}
+.content1{
+  padding:30px 30px 0 30px;
+}
+.content2{
+  padding:10px 30px 30px 30px;
+ border-radius: 0 0 8px 8px;
+}
+.content h3{
+  color: #48556a;
+  margin-bottom: 20px;
+}
+.para{
+  color: hsl(214, 17%, 51%);
+  font-size: 14px;
+  line-height: 22px;
+}
+.profilecontainer{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;justify-content: space-between;
+}
+.photocontainer img{
+  width:40px;
+  border-radius: 50%;
+}
+.photocontainer{
+  display:flex;
+  align-items: center;
+  
+}
+.name{
+  margin-left: 20px;
+  display:flex;
+  flex-direction: column;
+}
+.shareicon{
+  width:30px;
+  height: 30px;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+
+.tooltip {
+  visibility: hidden;
+  width: 200px;
+  background-color: #6d7f97;
+  color: #fff;
+  
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 180%;
+  left: -92%;
+  margin-left: -60px;
+  
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #6d7f97 transparent transparent transparent;
+}
+
+.shareicon:hover .whitecolor{
+  filter: invert(100%) sepia(24%) saturate(0%) hue-rotate(91deg) brightness(101%) contrast(100%);
+} */ */
+.svg-icon {
+  fill: black; /* Default color */
+}
+.shareicon:hover{
+  background-color: #6d7f97;
+}
+.shareicon:hover .svg-icon path{
+  fill: white; /* Change to white on hover */
+}
+.shareicon .svg-icon{
+  margin-top: -3px;
+} 
+.shareicon:hover .tooltip{
+  visibility: visible;
+}
+
+.tooltip svg{
+  margin-left: 13px;
+}
+.photocontainer2{
+    display:none;
+   
+  }
+
+  .photocontainer{
+   display:flex;
+  }
+
+
+@media only screen and (max-width:600px){
+  
+  .card{
+    flex-direction: column;
+    width:90%;
+  }
+  .image, .content{
+    width:100%;
+  }
+  .image img{
+    border-radius: 8px 8px 0 0;
+  }
+  .content{
+    border-radius: 0 0 8px 8px;
+    margin-top: -5px;
+  }
+ 
+
+
+  .name2{
+    display:flex;
+    gap:20px;
+  }
+
+
+  .tooltip{
+    display:none;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="image">
+      <img src="./images/drawers.jpg" width="100%" height="100%" alt="">
+    </div>
+    <div class="content">
+      <div class="content1">
+      <h3>Shift the overall look and feel by adding these wonderful 
+        touches to furniture in your home</h3>
+
+        <p class="para"> Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.</p>
+        </div>
+        <div class="content2">
+    <div class="profilecontainer">
+      <div class="photocontainer">
+        <img src="./images/avatar-michelle.jpg" alt="">
+        <div class="name">
+          <p style="font-size: 14px;font-weight: 700;color: hsl(217, 19%, 35%);">Michelle Appleton</p>
+          <p style="font-size: 12px;font-weight: 400;color:  hsl(212, 23%, 69%);">28 Jun 2020</p>
+        </div>  
+      </div>
+      
+      <div class="photocontainer2">
+        
+        <div class="name2">
+          <span style="color: white;letter-spacing: 2px;font-weight: 100;">SHARE</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"><path fill="#FFF" d="M20 2.172a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.605.996A4.096 4.096 0 0013.847.248c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 011.392 1a4.109 4.109 0 001.27 5.478 4.086 4.086 0 01-1.858-.513c-.045 1.9 1.318 3.679 3.291 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.833 2.849A8.25 8.25 0 010 14.658a11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.663-12.205A8.354 8.354 0 0020 2.172z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M10 0C4.478 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.545 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S15.522 0 10 0z"/></svg>
+     
+        </div>  
+      </div>
+
+      <div class="shareicon">
+        <div class="tooltip">
+          <span style="margin-left: 26px;">SHARE</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"><path fill="#FFF" d="M20 2.172a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.605.996A4.096 4.096 0 0013.847.248c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 011.392 1a4.109 4.109 0 001.27 5.478 4.086 4.086 0 01-1.858-.513c-.045 1.9 1.318 3.679 3.291 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.833 2.849A8.25 8.25 0 010 14.658a11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.663-12.205A8.354 8.354 0 0020 2.172z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M10 0C4.478 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.545 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S15.522 0 10 0z"/></svg>
+        </div>
+        <!-- <img src="./images/icon-share.svg" class="whitecolor" alt=""> -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" width="15" height="13"><path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+
+  
+  
+</body>
+
+<script>
+
+// function getWindowSize() {
+//   const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+//   const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+//   return { width };
+// }
+
+
+// console.log("Window height:", windowSize.height);
+// var windowSize;
+    const shareIcon = document.querySelector('.shareicon');
+    const content2 = document.querySelector('.content2');
+    const photocontainer = document.querySelector('.photocontainer');
+    const photocontainer2 = document.querySelector('.photocontainer2');
+
+
+function handleResize() {
+  if (window.innerWidth < 600) {
+    // Your code to execute when the window is less than 600px
+    console.log("Window width is less than 600px");
+
+  
+
+    shareIcon.addEventListener('mouseover', () => {
+      content2.style.backgroundColor = '#48556a'; // Change the color as desired
+      photocontainer.style.display = 'none';
+      photocontainer2.style.display = 'flex';
+    });
+
+    shareIcon.addEventListener('mouseout', () => {
+      content2.style.backgroundColor = 'initial'; // Reset the background color
+      photocontainer.style.display = 'flex';
+      photocontainer2.style.display = 'none';
+    });
+
+    }else{
+      console.log("Window width is more than 600px");
+      content2.style.backgroundColor = 'initial'; // Reset the background color
+      photocontainer.style.display = 'flex';
+      photocontainer2.style.display = 'none';
+    }
+  }
+
+
+// Add event listeners for both window load and resize
+window.addEventListener('load', handleResize());
+window.addEventListener('resize', handleResize());
+
+  
+// window.addEventListener('load',handleresize);
+  
+//   windowSize = getWindowSize();
+// console.log("Window width:", windowSize.width);
+
+
+// window.addEventListener('load',function (){
+  
+//   windowSize = getWindowSize();
+// console.log("Window width:", windowSize.width);
+
+
+
+
+
+
+
+
+
+</script>
+</html>
